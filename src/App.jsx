@@ -1,8 +1,13 @@
+import SelectDebuffs from "./components/SelectDebuffs"
+
 function App() {
 
   return (
     <>
-      <h1>Kefka Said...</h1>
+      <header>
+        <span>Kefka Said...</span>
+      </header>
+      <SelectDebuffs />
     </>
   )
 }
