@@ -1,3 +1,5 @@
+import GroupedOptions from "./GroupedOptions"
+
 export default function SelectDebuffs() {
 
     return (
@@ -6,7 +8,9 @@ export default function SelectDebuffs() {
 
             <section>
                 { /* Inputs go here */}
+                <GroupedOptions text="short gaze" opt1="real" opt2="fake" checkbox="on me" />
             </section>
         </main>
+
     )
 }
