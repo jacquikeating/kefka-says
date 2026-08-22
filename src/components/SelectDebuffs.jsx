@@ -9,6 +9,7 @@ export default function SelectDebuffs() {
             <section>
                 { /* Inputs go here */}
                 <GroupedOptions text="short gaze" opt1="real" opt2="fake" checkbox="on me" />
+                <GroupedOptions text="spread" opt1="short" opt2="long" opt3="N/A" />
             </section>
         </main>
 
