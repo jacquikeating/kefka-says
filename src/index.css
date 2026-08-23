@@ -95,9 +95,10 @@ p {
   .buttons {
     display: flex;
     align-items: center;
+    gap: 12px;
+    margin-right: 12px;
 
     button {
-      margin-right: 12px;
       cursor: pointer;
       font-size: 16px;
     }
