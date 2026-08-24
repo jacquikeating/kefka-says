@@ -8,8 +8,13 @@ export default function SelectDebuffs() {
 
             <section>
                 { /* Inputs go here */}
-                <GroupedOptions text="short gaze" opt1="real" opt2="fake" checkbox="on me" />
+                <GroupedOptions text="accel" opt1="real" opt2="fake" opt3="short" opt4="long" />
+                {/* <GroupedOptions opt1="short" opt2="long" /> */}
                 <GroupedOptions text="spread" opt1="short" opt2="long" opt3="N/A" />
+                <GroupedOptions text="short gaze" opt1="real" opt2="fake" checkbox="on me" />
+                <GroupedOptions text="long gaze" opt1="real" opt2="fake" checkbox="on me" />
+                <GroupedOptions text="water" opt1="real" opt2="fake" />
+                <GroupedOptions text="fire" opt1="real" opt2="fake" />
             </section>
         </main>
 
