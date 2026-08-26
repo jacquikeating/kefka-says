@@ -9,12 +9,23 @@ function App() {
   const [water, setWater] = useState({isReal: null})
   const [fire, setFire] = useState({isReal: null})
 
+  const [initialDebuffs, setInitialDebuffs] = useState({
+    isAccelReal: null,
+    accelLength: null,
+    spread: null,
+    isShortGazeReal: null,
+    isLongGazeReal: null,
+    myGaze: null,
+    isWaterReal: null,
+    isFireReal: null
+  })
+
   return (
     <>
       <header>
         <span>Kefka Said...</span>
       </header>
-      <SelectDebuffs />
+      <SelectDebuffs initialDebuffs={initialDebuffs} setInitialDebuffs={setInitialDebuffs} />
     </>
   )
 }

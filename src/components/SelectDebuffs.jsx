@@ -1,6 +1,8 @@
 import GroupedOptions from "./GroupedOptions"
 
-export default function SelectDebuffs() {
+export default function SelectDebuffs({ initialDebuffs, setInitialDebuffs }) {
+
+    
 
     return (
         <main>
