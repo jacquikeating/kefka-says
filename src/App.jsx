@@ -1,13 +1,15 @@
-import { useState } from "react"
+import { useState, createContext, useContext } from "react"
 import SelectDebuffs from "./components/SelectDebuffs"
 
+const DebuffsContext = createContext()
+
 function App() {
-  const [accel, setAccel] = useState({isReal: null, length: null})
-  const [spread, setSpread] = useState(null)
-  const [shortGaze, setShortGaze] = useState({isReal: null, isOnMe: null})
-  const [longGaze, setLongGaze] = useState({isReal: null, isOnMe: null})
-  const [water, setWater] = useState({isReal: null})
-  const [fire, setFire] = useState({isReal: null})
+  // const [accel, setAccel] = useState({isReal: null, length: null})
+  // const [spread, setSpread] = useState(null)
+  // const [shortGaze, setShortGaze] = useState({isReal: null, isOnMe: null})
+  // const [longGaze, setLongGaze] = useState({isReal: null, isOnMe: null})
+  // const [water, setWater] = useState({isReal: null})
+  // const [fire, setFire] = useState({isReal: null})
 
   const [initialDebuffs, setInitialDebuffs] = useState({
     isAccelReal: null,
@@ -25,9 +27,12 @@ function App() {
       <header>
         <span>Kefka Said...</span>
       </header>
-      <SelectDebuffs initialDebuffs={initialDebuffs} setInitialDebuffs={setInitialDebuffs} />
+      <DebuffsContext.Provider value={{initialDebuffs, setInitialDebuffs}}>
+        <SelectDebuffs />
+      </DebuffsContext.Provider>
     </>
   )
 }
 
 export default App
+export { DebuffsContext }

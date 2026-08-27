@@ -1,4 +1,9 @@
+import { useContext } from "react"
+import { DebuffsContext } from "../App"
+
 export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox, setterFn }) {
+
+    const { initialDebuffs, setInitialDebuffs } = useContext(DebuffsContext)
 
     return (
         <div className="grouped-options">

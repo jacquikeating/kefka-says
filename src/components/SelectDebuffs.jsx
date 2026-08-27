@@ -1,8 +1,10 @@
+import { useContext } from "react"
+import { DebuffsContext } from "../App"
 import GroupedOptions from "./GroupedOptions"
 
-export default function SelectDebuffs({ initialDebuffs, setInitialDebuffs }) {
+export default function SelectDebuffs() {
 
-    
+    const { initialDebuffs, setInitialDebuffs } = useContext(DebuffsContext)
 
     return (
         <main>
