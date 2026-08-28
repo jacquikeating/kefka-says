@@ -29,6 +29,11 @@ function App() {
       </header>
       <DebuffsContext.Provider value={{initialDebuffs, setInitialDebuffs}}>
         <SelectDebuffs />
+
+        {/* For development purposes only */}
+        {initialDebuffs.isAccelReal === true && <p>Accel is real</p> }
+        {initialDebuffs.isAccelReal === false && <p>Accel is fake</p> }
+
       </DebuffsContext.Provider>
     </>
   )
