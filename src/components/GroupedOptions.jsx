@@ -9,10 +9,27 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
         /* For development purposes only */
         console.log(selectedOption)
 
-        /* If/else conditions for each debuff type? */
-        if (text == "accel") {
-            console.log(initialDebuffs.isAccelReal)
+        /* If/else conditions for each debuff type */
+        if (selectedOption == opt3 && text == "accel" || selectedOption == opt4) {
+            setInitialDebuffs({... initialDebuffs, accelLength: selectedOption})
+        } else if (text == "accel") {
             setInitialDebuffs({... initialDebuffs, isAccelReal: selectedOption})
+        } else if (text == "short gaze") {
+            if (selectedOption == true || selectedOption == false) {
+                setInitialDebuffs({... initialDebuffs, isShortGazeReal: selectedOption})
+            } else {
+                setInitialDebuffs({... initialDebuffs, myGaze: "short"})
+            }
+        } else if (text == "long gaze") {
+            if (selectedOption == true || selectedOption == false) {
+                setInitialDebuffs({... initialDebuffs, isLongGazeReal: selectedOption})
+            } else {
+                setInitialDebuffs({... initialDebuffs, myGaze: "long"})
+            }
+        } else if (text == "water") {
+            setInitialDebuffs({... initialDebuffs, isWaterReal: selectedOption})
+        } else if (text == "fire") {
+            setInitialDebuffs({... initialDebuffs, isFireReal: selectedOption})
         }
     }
 
