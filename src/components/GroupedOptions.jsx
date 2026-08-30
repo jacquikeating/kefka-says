@@ -1,7 +1,8 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { DebuffsContext } from "../App"
 
 export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox, setterFn }) {
+    const [checked, setChecked] = useState(false) 
 
     const { initialDebuffs, setInitialDebuffs } = useContext(DebuffsContext)
 
@@ -33,6 +34,16 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
         }
     }
 
+    function handleCheck(e) {
+        setChecked(e.target.checked)
+        if (text == "short gaze") {
+            setInitialDebuffs({... initialDebuffs, myGaze: "short"})
+            
+        } else if (text == "long gaze") {
+            setInitialDebuffs({... initialDebuffs, myGaze: "long"})
+        }
+    }
+
     return (
         <div className="grouped-options">
             <h2>{text}</h2>
@@ -46,7 +57,7 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
                 {opt3 && !opt4 && <button>{opt3}</button>}
                 {checkbox && 
                     <div className="checkbox-div">
-                        <input type="checkbox" name={checkbox} />
+                        <input type="checkbox" name={checkbox} checked={checked} onChange={e => handleCheck(e)} />
                         <label htmlFor={checkbox}>{checkbox}</label>
                     </div>
                 }
