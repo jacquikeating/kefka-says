@@ -16,21 +16,15 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
         } else if (text == "accel") {
             setInitialDebuffs({... initialDebuffs, isAccelReal: selectedOption})
         } else if (text == "short gaze") {
-            if (selectedOption == true || selectedOption == false) {
-                setInitialDebuffs({... initialDebuffs, isShortGazeReal: selectedOption})
-            } else {
-                setInitialDebuffs({... initialDebuffs, myGaze: "short"})
-            }
+            setInitialDebuffs({... initialDebuffs, isShortGazeReal: selectedOption})
         } else if (text == "long gaze") {
-            if (selectedOption == true || selectedOption == false) {
-                setInitialDebuffs({... initialDebuffs, isLongGazeReal: selectedOption})
-            } else {
-                setInitialDebuffs({... initialDebuffs, myGaze: "long"})
-            }
+            setInitialDebuffs({... initialDebuffs, isLongGazeReal: selectedOption})
         } else if (text == "water") {
             setInitialDebuffs({... initialDebuffs, isWaterReal: selectedOption})
         } else if (text == "fire") {
             setInitialDebuffs({... initialDebuffs, isFireReal: selectedOption})
+        } else if (text == "spread") {
+            setInitialDebuffs({... initialDebuffs, spread: selectedOption}) 
         }
     }
 
@@ -48,13 +42,13 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
         <div className="grouped-options">
             <h2>{text}</h2>
             <div className="buttons">
-                <button onClick={() => handleClick(true)}>
+                <button onClick={() => handleClick(opt1)}>
                     {opt1 === true ? "real" : opt1}
                 </button>
-                <button onClick={() => handleClick(false)}>
+                <button onClick={() => handleClick(opt2)}>
                     {opt2 === false ? "fake" : opt2}
                 </button>
-                {opt3 && !opt4 && <button>{opt3}</button>}
+                {opt3 && !opt4 && <button onClick={() => handleClick("no")}>{opt3}</button>}
                 {checkbox && 
                     <div className="checkbox-div">
                         <input type="checkbox" name={checkbox} checked={checked} onChange={e => handleCheck(e)} />
@@ -65,8 +59,8 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
             {opt4 &&
                 <div className="buttons">
                     <span>•</span>
-                    <button>{opt3}</button>
-                    <button>{opt4}</button>
+                    <button onClick={() => handleClick(opt3)}>{opt3}</button>
+                    <button onClick={() => handleClick(opt4)}>{opt4}</button>
                 </div>
             } 
         </div>
