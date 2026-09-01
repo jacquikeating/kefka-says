@@ -14,15 +14,15 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
         if (selectedOption == opt3 && text == "accel" || selectedOption == opt4) {
             setInitialDebuffs({... initialDebuffs, accelLength: selectedOption})
         } else if (text == "accel") {
-            setInitialDebuffs({... initialDebuffs, isAccelReal: selectedOption})
+            setInitialDebuffs({... initialDebuffs, accelReal: selectedOption})
         } else if (text == "short gaze") {
-            setInitialDebuffs({... initialDebuffs, isShortGazeReal: selectedOption})
+            setInitialDebuffs({... initialDebuffs, shortGaze: selectedOption})
         } else if (text == "long gaze") {
-            setInitialDebuffs({... initialDebuffs, isLongGazeReal: selectedOption})
+            setInitialDebuffs({... initialDebuffs, longGaze: selectedOption})
         } else if (text == "water") {
-            setInitialDebuffs({... initialDebuffs, isWaterReal: selectedOption})
+            setInitialDebuffs({... initialDebuffs, water: selectedOption})
         } else if (text == "fire") {
-            setInitialDebuffs({... initialDebuffs, isFireReal: selectedOption})
+            setInitialDebuffs({... initialDebuffs, fire: selectedOption})
         } else if (text == "spread") {
             setInitialDebuffs({... initialDebuffs, spread: selectedOption}) 
         }
@@ -32,7 +32,6 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
         setChecked(e.target.checked)
         if (text == "short gaze") {
             setInitialDebuffs({... initialDebuffs, myGaze: "short"})
-            
         } else if (text == "long gaze") {
             setInitialDebuffs({... initialDebuffs, myGaze: "long"})
         }
@@ -42,12 +41,8 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox,
         <div className="grouped-options">
             <h2>{text}</h2>
             <div className="buttons">
-                <button onClick={() => handleClick(opt1)}>
-                    {opt1 === true ? "real" : opt1}
-                </button>
-                <button onClick={() => handleClick(opt2)}>
-                    {opt2 === false ? "fake" : opt2}
-                </button>
+                <button onClick={() => handleClick(opt1)}>{opt1}</button>
+                <button onClick={() => handleClick(opt2)}>{opt2}</button>
                 {opt3 && !opt4 && <button onClick={() => handleClick("no")}>{opt3}</button>}
                 {checkbox && 
                     <div className="checkbox-div">

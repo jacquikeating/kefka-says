@@ -12,14 +12,14 @@ function App() {
   // const [fire, setFire] = useState({isReal: null})
 
   const [initialDebuffs, setInitialDebuffs] = useState({
-    isAccelReal: null,
+    accelReal: null,
     accelLength: null,
     spread: null,
-    isShortGazeReal: null,
-    isLongGazeReal: null,
+    shortGaze: null,
+    longGaze: null,
     myGaze: null,
-    isWaterReal: null,
-    isFireReal: null
+    water: null,
+    fire: null
   })
 
   return (
@@ -31,8 +31,8 @@ function App() {
         <SelectDebuffs />
 
         {/* For development purposes only */}
-        {initialDebuffs.isAccelReal === true && <p>Accel is real</p> }
-        {initialDebuffs.isAccelReal === false && <p>Accel is fake</p> }
+        {initialDebuffs.accelReal && <p>{initialDebuffs.accelLength} accel ({initialDebuffs.accelReal})</p>}
+        {initialDebuffs.spread && <p>{initialDebuffs.spread} spread</p>}
 
       </DebuffsContext.Provider>
     </>
