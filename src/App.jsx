@@ -33,7 +33,11 @@ function App() {
         {/* For development purposes only */}
         {initialDebuffs.accelReal && <p>{initialDebuffs.accelLength} accel ({initialDebuffs.accelReal})</p>}
         {initialDebuffs.spread && <p>{initialDebuffs.spread} spread</p>}
-
+        {initialDebuffs.shortGaze && <p>short gaze is {initialDebuffs.shortGaze}</p>}
+        {initialDebuffs.longGaze && <p>long gaze is {initialDebuffs.longGaze}</p>}
+        {initialDebuffs.myGaze && <p>i have {initialDebuffs.myGaze} gaze</p>}
+        {initialDebuffs.water && <p>water is {initialDebuffs.water}</p>}
+        {initialDebuffs.fire && <p>fire is {initialDebuffs.fire}</p>}
       </DebuffsContext.Provider>
     </>
   )
