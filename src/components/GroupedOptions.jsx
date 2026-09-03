@@ -1,15 +1,12 @@
 import { useContext, useState } from "react"
 import { DebuffsContext } from "../App"
 
-export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox, setterFn }) {
+export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox }) {
     const [checked, setChecked] = useState(false) 
 
     const { initialDebuffs, setInitialDebuffs } = useContext(DebuffsContext)
 
     function handleClick(selectedOption) {
-        /* For development purposes only */
-        console.log(selectedOption)
-
         /* If/else conditions for each debuff type */
         if (selectedOption == opt3 && text == "accel" || selectedOption == opt4) {
             setInitialDebuffs({... initialDebuffs, accelLength: selectedOption})
