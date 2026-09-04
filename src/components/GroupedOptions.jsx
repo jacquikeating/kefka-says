@@ -22,6 +22,8 @@ export default function GroupedOptions({ text, opt1, opt2, opt3, opt4, checkbox 
             setInitialDebuffs({... initialDebuffs, fire: selectedOption})
         } else if (text == "spread") {
             setInitialDebuffs({... initialDebuffs, spread: selectedOption}) 
+        } else if (text == "my gaze") {
+            setInitialDebuffs({... initialDebuffs, myGaze: selectedOption})
         }
     }
 
