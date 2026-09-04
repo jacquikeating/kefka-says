@@ -4,7 +4,7 @@ import SelectDebuffs from "./components/SelectDebuffs"
 const DebuffsContext = createContext()
 
 function App() {
-  
+
   const [initialDebuffs, setInitialDebuffs] = useState({
     accelReal: null,
     accelLength: null,
@@ -16,12 +16,14 @@ function App() {
     fire: null
   })
 
+  const [showAll, setShowAll] = useState(true)
+
   return (
     <>
       <header>
         <span>Kefka Said...</span>
       </header>
-      <DebuffsContext.Provider value={{initialDebuffs, setInitialDebuffs}}>
+      <DebuffsContext.Provider value={{initialDebuffs, setInitialDebuffs, showAll, setShowAll}}>
         <SelectDebuffs />
 
         {/* For development purposes only */}
