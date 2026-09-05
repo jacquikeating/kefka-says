@@ -18,6 +18,19 @@ function App() {
 
   const [showAll, setShowAll] = useState(true)
 
+  function reset() {
+    setInitialDebuffs({
+      accelReal: null,
+      accelLength: null,
+      spread: null,
+      shortGaze: null,
+      longGaze: null,
+      myGaze: null,
+      water: null,
+      fire: null
+    })
+  }
+
   return (
     <>
       <header>
@@ -34,6 +47,8 @@ function App() {
         {initialDebuffs.myGaze && <p>i have {initialDebuffs.myGaze} gaze</p>}
         {initialDebuffs.water && <p>water is {initialDebuffs.water}</p>}
         {initialDebuffs.fire && <p>fire is {initialDebuffs.fire}</p>}
+
+        <button onClick={reset}>Reset</button>
       </DebuffsContext.Provider>
     </>
   )
